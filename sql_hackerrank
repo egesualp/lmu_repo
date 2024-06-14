@@ -1,0 +1,14 @@
+
+https://www.hackerrank.com/challenges/print-prime-numbers/problem?isFullScreen=true
+with RECURSIVE seq as (
+    select 1 as n
+    union all
+    select n + 1
+    from seq
+    where n < 1000
+)
+select distinct '&' + str(n), row_number()
+select n
+from seq
+where n % 2 <> 0 and n != 0;
+
